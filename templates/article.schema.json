@@ -69,11 +69,6 @@
       "type": "string",
       "format": "uri",
       "description": "元のYouTube動画URL"
-    },
-    "thumbnailUrl": {
-      "type": "string",
-      "format": "uri",
-      "description": "サムネイル画像URL（空の場合は自動生成）"
     }
   }
 }

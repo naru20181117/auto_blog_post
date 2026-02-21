@@ -126,7 +126,18 @@
     },
     {
       "type": "p",
-      "text": "XやInstagramで開発の進捗も書き始めました。X: https://twitter.com/Brighty_site"
+      "text": "XやInstagramで開発の進捗も書き始めました。X: https://twitter.com/Brighty_site",
+      "segments": [
+        {
+          "text": "XやInstagramで開発の進捗も書き始めました。X: "
+        },
+        {
+          "text": "https://twitter.com/Brighty_site",
+          "link": {
+            "url": "https://twitter.com/Brighty_site"
+          }
+        }
+      ]
     },
     {
       "type": "p",
@@ -134,7 +145,18 @@
     },
     {
       "type": "p",
-      "text": "FB:  https://www.facebook.com/groups/1077397113425754"
+      "text": "FB:  https://www.facebook.com/groups/1077397113425754",
+      "segments": [
+        {
+          "text": "FB:  "
+        },
+        {
+          "text": "https://www.facebook.com/groups/1077397113425754",
+          "link": {
+            "url": "https://www.facebook.com/groups/1077397113425754"
+          }
+        }
+      ]
     },
     {
       "type": "p",

@@ -12,7 +12,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { CategoryId, CATEGORIES, getThumbnailUrl } from "../config/default.js";
+import { CategoryId, CATEGORIES } from "../config/default.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, "..");
@@ -80,7 +80,6 @@ function createArticleData(options: GenerateOptions) {
     ctaType: categoryInfo.defaultCta,
     tags: [...categoryInfo.defaultTags],
     youtubeUrl: options.youtubeUrl || "",
-    thumbnailUrl: getThumbnailUrl(options.category),
     _meta: {
       createdAt: new Date().toISOString(),
       status: "draft",

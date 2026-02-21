@@ -17,7 +17,11 @@
       "Bash(pnpm run validate:*)",
       "Bash(pnpm run publish:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(node -e:*)",
+      "Bash(pnpm tsx:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

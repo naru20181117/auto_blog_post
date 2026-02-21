@@ -30,7 +30,6 @@ interface ArticleData {
   ctaType?: CtaType;
   tags?: string[];
   youtubeUrl?: string;
-  thumbnailUrl?: string;
 }
 
 interface ValidationError {

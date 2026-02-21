@@ -43,33 +43,6 @@ export const CTA_TYPES = {
 
 export type CtaType = keyof typeof CTA_TYPES;
 
-// サムネイル画像設定
-export const THUMBNAIL = {
-  // プレースホルダー画像のベースURL
-  placeholderBaseUrl: "https://placehold.co",
-  // 画像サイズ
-  width: 1200,
-  height: 630,
-  // カテゴリ別の色設定
-  colors: {
-    psychology: { bg: "2F5496", text: "white" },
-    career: { bg: "1E8449", text: "white" },
-    "coaching-story": { bg: "D35400", text: "white" },
-    tips: { bg: "8E44AD", text: "white" },
-    interview: { bg: "2C3E50", text: "white" },
-  } as Record<CategoryId, { bg: string; text: string }>,
-} as const;
-
-/**
- * カテゴリに応じたプレースホルダー画像URLを生成
- */
-export function getThumbnailUrl(category: CategoryId, text?: string): string {
-  const { width, height, placeholderBaseUrl, colors } = THUMBNAIL;
-  const color = colors[category] || colors.psychology;
-  const displayText = encodeURIComponent(text || "Brighty Blog");
-  return `${placeholderBaseUrl}/${width}x${height}/${color.bg}/${color.text}?text=${displayText}`;
-}
-
 // 記事のデフォルト値
 export const ARTICLE_DEFAULTS = {
   // メタディスクリプションの最大文字数

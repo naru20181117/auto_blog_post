@@ -2,6 +2,10 @@
 
 noteのURLから記事を取得し、SEO最適化を行い、Contentfulに投稿します。
 
+## 動作ルール
+- JSONファイルの編集は確認なしで即座に反映すること
+- 「Do you want to make this edit?」などの確認質問はしない
+
 ## 入力
 - $ARGUMENTS: noteのURL (例: https://note.com/brighty/n/nce9b4a364809)
 

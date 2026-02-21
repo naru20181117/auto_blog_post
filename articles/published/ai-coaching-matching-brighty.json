@@ -1,7 +1,7 @@
 {
   "title": "AIがコーチを探す時代への対応〜コーチング業界の新しい潮流とBrightyの取り組み〜",
   "slug": "ai-coaching-matching-brighty",
-  "category": "coaching-story",
+  "category": "tips",
   "excerpt": "「AIでコーチを見つけました」という声が増えています。コーチ選びに迷う時代は終わり、AIが最適なコーチを推薦する時代へ。ブライティーがLLMO技術で実現する、ミスマッチのない確実なマッチングとは？",
   "body": [
     {
@@ -246,7 +246,21 @@
     },
     {
       "type": "p",
-      "text": "詳しくはリリースノートを参照"
+      "text": "詳しくはリリースノートを参照",
+      "segments": [
+        {
+          "text": "詳しくは"
+        },
+        {
+          "text": "リリースノート",
+          "link": {
+            "url": "https://info.brighty.site/"
+          }
+        },
+        {
+          "text": "を参照"
+        }
+      ]
     },
     {
       "type": "h2",
@@ -286,7 +300,21 @@
     },
     {
       "type": "p",
-      "text": "ブライティーへのユーザー登録は、こちらのURLへアクセスしてください。 （登録・ログインはGoogleの連携が必要となります）"
+      "text": "ブライティーへのユーザー登録は、こちらのURLへアクセスしてください。 （登録・ログインはGoogleの連携が必要となります）",
+      "segments": [
+        {
+          "text": "ブライティーへのユーザー登録は、"
+        },
+        {
+          "text": "こちらのURL",
+          "link": {
+            "url": "https://www.brighty.site/coach/lp/badge"
+          }
+        },
+        {
+          "text": "へアクセスしてください。 （登録・ログインはGoogleの連携が必要となります）"
+        }
+      ]
     },
     {
       "type": "p",

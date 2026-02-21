@@ -60,6 +60,7 @@ interface ArticleData {
 interface PublishOptions {
   file: string;
   shouldPublish: boolean;
+  shouldUpdate: boolean;
 }
 
 function parseArgs(): PublishOptions {
@@ -67,6 +68,7 @@ function parseArgs(): PublishOptions {
   const options: PublishOptions = {
     file: "",
     shouldPublish: args.includes("--publish"),
+    shouldUpdate: args.includes("--update"),
   };
 
   for (const arg of args) {
@@ -229,15 +231,58 @@ async function publishArticle(
   environment: Environment,
   article: ArticleData,
   locale: string,
-  shouldPublish: boolean
+  shouldPublish: boolean,
+  shouldUpdate: boolean
 ): Promise<void> {
-  console.log(`\n📝 記事を投稿中: ${article.title}`);
+  console.log(`\n📝 記事を${shouldUpdate ? "更新" : "投稿"}中: ${article.title}`);
 
   // 既存チェック
   const existing = await findEntryBySlug(environment, article.slug);
+
+  if (existing && shouldUpdate) {
+    // 更新モード
+    console.log(`  🔄 既存エントリを更新中...`);
+
+    // Rich Textに変換
+    const richTextBody = bodyToRichText(article.body);
+
+    // フィールドを更新
+    existing.fields.title = { [locale]: article.title };
+    existing.fields.body = { [locale]: richTextBody };
+    existing.fields.excerpt = { [locale]: article.excerpt };
+    existing.fields.category = { [locale]: article.category };
+    existing.fields.metaDescription = { [locale]: article.metaDescription };
+
+    if (article.tags && article.tags.length > 0) {
+      existing.fields.tags = { [locale]: article.tags };
+    }
+    if (article.ogpText) {
+      existing.fields.ogpText = { [locale]: article.ogpText };
+    }
+    if (article.ctaType) {
+      existing.fields.ctaType = { [locale]: article.ctaType };
+    }
+    if (article.youtubeUrl) {
+      existing.fields.youtubeUrl = { [locale]: article.youtubeUrl };
+    }
+
+    const updatedEntry = await existing.update();
+    console.log(`  ✅ 記事更新完了: ${article.title}`);
+    console.log(`     URL: https://app.contentful.com/spaces/${SPACE_ID}/entries/${updatedEntry.sys.id}`);
+
+    if (shouldPublish) {
+      await updatedEntry.publish();
+      console.log(`  🚀 記事公開完了`);
+    } else {
+      console.log(`  📋 ドラフト状態で保存（--publish フラグで公開可能）`);
+    }
+    return;
+  }
+
   if (existing) {
     console.log(`  ⏭️  スキップ: slug "${article.slug}" は既に存在します`);
     console.log(`     URL: https://app.contentful.com/spaces/${SPACE_ID}/entries/${existing.sys.id}`);
+    console.log(`     更新する場合は --update フラグを使用してください`);
     return;
   }
 
@@ -320,13 +365,19 @@ async function main() {
 
   const options = parseArgs();
 
-  // ファイル読み込み
+  // ファイル読み込み（更新モードの場合はpublishedディレクトリも確認）
   const pendingDir = path.join(ROOT_DIR, "articles", "pending");
-  const filePath = path.join(pendingDir, options.file);
+  const publishedDir = path.join(ROOT_DIR, "articles", "published");
+  let filePath = path.join(pendingDir, options.file);
 
   if (!fs.existsSync(filePath)) {
-    console.error(`❌ ファイルが見つかりません: ${filePath}`);
-    process.exit(1);
+    // pendingになければpublishedを確認
+    filePath = path.join(publishedDir, options.file);
+    if (!fs.existsSync(filePath)) {
+      console.error(`❌ ファイルが見つかりません: ${options.file}`);
+      console.error(`   確認した場所: ${pendingDir}, ${publishedDir}`);
+      process.exit(1);
+    }
   }
 
   const content = fs.readFileSync(filePath, "utf-8");
@@ -334,7 +385,7 @@ async function main() {
 
   console.log(`📄 ファイル: ${options.file}`);
   console.log(`📝 タイトル: ${article.title}`);
-  console.log(`🔧 公開モード: ${options.shouldPublish ? "自動公開" : "ドラフト"}\n`);
+  console.log(`🔧 モード: ${options.shouldUpdate ? "更新" : "新規投稿"} / ${options.shouldPublish ? "自動公開" : "ドラフト"}\n`);
 
   // レビュー必須項目のチェック
   const reviewErrors: string[] = [];
@@ -376,7 +427,7 @@ async function main() {
 
   console.log(`📍 ロケール: ${locale}`);
 
-  await publishArticle(environment, article, locale, options.shouldPublish);
+  await publishArticle(environment, article, locale, options.shouldPublish, options.shouldUpdate);
 
   console.log("\n=====================");
   console.log("✅ 完了");
