@@ -1,0 +1,26 @@
+{
+  "name": "auto-blog-post",
+  "version": "1.0.0",
+  "description": "Contentful Management API を使ったブログ記事投稿スクリプト",
+  "type": "module",
+  "scripts": {
+    "fetch-note": "tsx scripts/fetch-note.ts",
+    "generate": "tsx scripts/generate.ts",
+    "validate": "tsx scripts/validate.ts",
+    "drafts": "tsx scripts/list-drafts.ts",
+    "publish": "tsx scripts/publish-article.ts",
+    "publish:draft": "tsx scripts/publish-article.ts",
+    "publish:live": "tsx scripts/publish-article.ts --publish"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "contentful-management": "^11.35.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.2"
+  }
+}

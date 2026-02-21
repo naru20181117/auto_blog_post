@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Article",
+  "description": "Brighty ブログ記事のスキーマ",
+  "type": "object",
+  "required": ["title", "slug", "category", "excerpt", "body", "metaDescription"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "記事タイトル"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "URL用スラッグ（半角英数字とハイフンのみ）"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["psychology", "career", "coaching-story", "tips", "interview"],
+      "description": "記事カテゴリ"
+    },
+    "excerpt": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "一覧用の要約"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "text"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["h2", "h3", "p"],
+            "description": "ブロックタイプ"
+          },
+          "text": {
+            "type": "string",
+            "description": "テキスト内容"
+          }
+        }
+      },
+      "description": "記事本文（構造化）"
+    },
+    "metaDescription": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "SEO用メタディスクリプション"
+    },
+    "ogpText": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "SNSシェア用テキスト"
+    },
+    "ctaType": {
+      "type": "string",
+      "enum": ["find-coach", "register-coach", "free-trial"],
+      "default": "find-coach",
+      "description": "CTAタイプ"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "SEOキーワードタグ"
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "元のYouTube動画URL"
+    },
+    "thumbnailUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "サムネイル画像URL（空の場合は自動生成）"
+    }
+  }
+}

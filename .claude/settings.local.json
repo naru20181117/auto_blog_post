@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install)",
+      "Bash(pnpm exec ts-node:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm exec tsx:*)",
+      "Bash(curl:*)",
+      "Bash(make:*)",
+      "Bash(pnpm run drafts:*)",
+      "Bash(npx tsx:*)",
+      "WebFetch(domain:res.cloudinary.com)",
+      "WebFetch(domain:note.com)",
+      "Bash(pnpm run fetch-note:*)",
+      "Bash(pnpm run publish:article:*)",
+      "Bash(grep:*)",
+      "Bash(pnpm run validate:*)",
+      "Bash(pnpm run publish:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
