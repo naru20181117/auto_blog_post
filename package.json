@@ -12,12 +12,14 @@
     "publish:draft": "tsx scripts/publish-article.ts",
     "publish:live": "tsx scripts/publish-article.ts --publish",
     "publish:info": "tsx scripts/publish-info.ts",
-    "publish:info:live": "tsx scripts/publish-info.ts --publish"
+    "publish:info:live": "tsx scripts/publish-info.ts --publish",
+    "post:x": "tsx scripts/post-to-x.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
     "contentful-management": "^11.35.1",
     "dotenv": "^16.4.5",
+    "twitter-api-v2": "^1.29.0",
     "youtube-transcript-plus": "^1.2.0"
   },
   "devDependencies": {
