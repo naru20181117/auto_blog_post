@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "fetch-note": "tsx scripts/fetch-note.ts",
-    "generate": "tsx scripts/generate.ts",
+    "fetch-youtube": "tsx scripts/fetch-youtube.ts",
     "validate": "tsx scripts/validate.ts",
     "drafts": "tsx scripts/list-drafts.ts",
     "publish": "tsx scripts/publish-article.ts",
@@ -17,7 +17,8 @@
   "dependencies": {
     "cheerio": "^1.2.0",
     "contentful-management": "^11.35.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "youtube-transcript-plus": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

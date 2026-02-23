@@ -12,7 +12,6 @@
       "WebFetch(domain:res.cloudinary.com)",
       "WebFetch(domain:note.com)",
       "Bash(pnpm run fetch-note:*)",
-      "Bash(pnpm run publish:article:*)",
       "Bash(grep:*)",
       "Bash(pnpm run validate:*)",
       "Bash(pnpm run publish:*)",
@@ -34,7 +33,9 @@
       "Bash(jq --version:*)",
       "Bash(/Users/narupro/openmi/brighty-servies/auto_blog_post/.claude/hooks/notify.sh)",
       "WebFetch(domain:www.npmjs.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(pnpm run fetch-youtube:*)"
     ]
   },
   "hooks": {

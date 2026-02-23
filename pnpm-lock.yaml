@@ -17,6 +17,9 @@ importers:
       dotenv:
         specifier: ^16.4.5
         version: 16.6.1
+      youtube-transcript-plus:
+        specifier: ^1.2.0
+        version: 1.2.0
     devDependencies:
       '@types/node':
         specifier: ^22.10.2
@@ -526,6 +529,10 @@ packages:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
 
+  youtube-transcript-plus@1.2.0:
+    resolution: {integrity: sha512-SRjVft8V+vUulMKgakgfzC+pnFLSy4tolX7xGnSvp9juUNocikMFmUx5GlhzLDILzxYrijcYtmNqz0qyklnPmA==}
+    engines: {node: '>=18.0.0'}
+
 snapshots:
 
   '@contentful/rich-text-types@16.8.5': {}
@@ -984,3 +991,5 @@ snapshots:
   whatwg-mimetype@4.0.0: {}
 
   yn@3.1.1: {}
+
+  youtube-transcript-plus@1.2.0: {}
