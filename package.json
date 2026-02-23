@@ -10,7 +10,9 @@
     "drafts": "tsx scripts/list-drafts.ts",
     "publish": "tsx scripts/publish-article.ts",
     "publish:draft": "tsx scripts/publish-article.ts",
-    "publish:live": "tsx scripts/publish-article.ts --publish"
+    "publish:live": "tsx scripts/publish-article.ts --publish",
+    "publish:info": "tsx scripts/publish-info.ts",
+    "publish:info:live": "tsx scripts/publish-info.ts --publish"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
