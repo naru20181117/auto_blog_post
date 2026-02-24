@@ -13,7 +13,8 @@
     "publish:live": "tsx scripts/publish-article.ts --publish",
     "publish:info": "tsx scripts/publish-info.ts",
     "publish:info:live": "tsx scripts/publish-info.ts --publish",
-    "post:x": "tsx scripts/post-to-x.ts"
+    "post:x": "tsx scripts/post-to-x.ts",
+    "post:sns": "tsx scripts/post-to-sns.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

@@ -36,7 +36,8 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:www.youtube.com)",
       "Bash(pnpm run fetch-youtube:*)",
-      "Bash(pnpm run post:x:*)"
+      "Bash(pnpm run post:x:*)",
+      "Bash(pnpm run post:sns:*)"
     ]
   },
   "hooks": {

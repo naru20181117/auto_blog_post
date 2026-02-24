@@ -147,9 +147,9 @@ pnpm run validate --file="{slug}.json"
 pnpm run publish:live --file="{slug}.json"
 ```
 
-### 10. Xに投稿
+### 10. XとThreadsに同時投稿
 ```bash
-pnpm run post:x --file="{slug}.json"
+pnpm run post:sns --text="{SNS投稿文}"
 ```
 
 ### 11. 結果を報告
@@ -160,8 +160,9 @@ pnpm run post:x --file="{slug}.json"
 - Contentful: {contentful_url}
 - 公開URL: https://www.brighty.site/blog/{slug}
 
-🐦 X投稿
-- URL: https://x.com/openmi_naru/status/{tweetId}
+📱 SNS投稿
+- X: https://x.com/openmi_naru/status/{tweetId}
+- Threads: https://www.threads.net/@openmi_naru/post/{postId}
 
 🎬 元動画
 - {youtubeUrl}
@@ -182,7 +183,7 @@ pnpm run post:x --file="{slug}.json"
 
 ---
 
-## X投稿文の例
+## SNS投稿文の例（X・Threads共通）
 
 ```
 大企業か、スタートアップか。
