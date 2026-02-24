@@ -1,5 +1,6 @@
 /**
  * Threads API ユーティリティ
+ * Node.js 組み込みの fetch API を使用
  */
 
 const THREADS_API_BASE = "https://graph.threads.net/v1.0";
