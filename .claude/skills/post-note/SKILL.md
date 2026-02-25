@@ -1,3 +1,9 @@
+---
+name: post-note
+description: note記事をContentfulに投稿
+allowed-tools: Bash(pnpm run fetch-note:*), Bash(pnpm run publish:*), Bash(pnpm run validate:*), Bash(mv:*), WebFetch(domain:note.com), Read, Edit
+---
+
 # note記事をContentfulに投稿
 
 noteのURLから記事を取得し、SEO最適化を行い、Contentfulに投稿します。

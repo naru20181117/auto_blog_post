@@ -1,3 +1,9 @@
+---
+name: post-info
+description: Brighty Infoにお知らせ/リリースノートを投稿
+allowed-tools: Bash(pnpm run publish:info:*), Bash(pnpm tsx scripts/publish-info.ts:*), Read, Edit, Write
+---
+
 # Brighty Infoにお知らせ/リリースノートを投稿
 
 info.brighty.site にお知らせやリリースノートを投稿します。

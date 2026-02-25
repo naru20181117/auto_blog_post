@@ -1,3 +1,9 @@
+---
+name: post-youtube
+description: YouTube動画からContentfulに記事を投稿
+allowed-tools: Bash(pnpm run fetch-youtube:*), Bash(pnpm run publish:*), Bash(pnpm run validate:*), Bash(pnpm run post:sns:*), Bash(mv:*), WebFetch(domain:www.youtube.com), Read, Edit
+---
+
 # YouTube動画からContentfulに記事を投稿 & Xに拡散
 
 YouTube動画のURLから字幕を取得し、ブログ記事に再構成してContentfulに公開、さらにXに自動投稿します。

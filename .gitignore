@@ -18,3 +18,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Claude Code (personal settings)
+.claude/settings.local.json
+.claude/notifications.log
+.claude/CLAUDE.local.md
