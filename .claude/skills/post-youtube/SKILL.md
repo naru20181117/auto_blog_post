@@ -25,7 +25,9 @@ Phase 1: 記事生成（自動）
     ↓
 Phase 2: 確認（唯一の確認ポイント）
     ↓
-Phase 3: 公開 & X投稿（自動）
+Phase 3: 公開 & SNS投稿文提示（自動）
+    ↓
+手動で画像/動画を追加してSNS投稿
 ```
 
 ---
@@ -141,7 +143,7 @@ excerpt: {excerpt}
 
 ---
 
-## Phase 3: 公開 & X投稿（自動）
+## Phase 3: 公開 & SNS投稿文提示（自動）
 
 ### 8. バリデーション
 ```bash
@@ -153,12 +155,17 @@ pnpm run validate --file="{slug}.json"
 pnpm run publish:live --file="{slug}.json"
 ```
 
-### 10. XとThreadsに同時投稿
-```bash
-pnpm run post:sns --text="{SNS投稿文}"
-```
+### 10. 結果を報告 & SNS投稿文を提示
+`config/sns.ts` のガイドラインに従い、投稿文を生成して提示する。
 
-### 11. 結果を報告
+**ガイドライン要点:**
+- 記事の焦点を1〜2点に絞る
+- 箇条書きで簡潔に
+- ユーザー視点のベネフィットを明示
+- ハッシュタグ `#コーチング` を付ける
+- リンクはリプライで貼るため、メイン投稿には含めない
+
+**提示フォーマット:**
 ```
 ✅ 完了しました！
 
@@ -166,12 +173,25 @@ pnpm run post:sns --text="{SNS投稿文}"
 - Contentful: {contentful_url}
 - 公開URL: https://www.brighty.site/blog/{slug}
 
-📱 SNS投稿
-- X: https://x.com/openmi_naru/status/{tweetId}
-- Threads: https://www.threads.net/@openmi_naru/post/{postId}
-
 🎬 元動画
 - {youtubeUrl}
+
+─────────────────────────────
+
+📱 SNS投稿文（メイン）
+─────────────────────────────
+{投稿文}
+
+#コーチング
+─────────────────────────────
+
+📎 リプライ用
+─────────────────────────────
+詳しくはこちら👇
+https://www.brighty.site/blog/{slug}
+─────────────────────────────
+
+※ 画像/動画を追加して投稿してください
 ```
 
 ---

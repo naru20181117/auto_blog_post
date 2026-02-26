@@ -14,7 +14,8 @@
     "publish:info": "tsx scripts/publish-info.ts",
     "publish:info:live": "tsx scripts/publish-info.ts --publish",
     "post:x": "tsx scripts/post-to-x.ts",
-    "post:sns": "tsx scripts/post-to-sns.ts"
+    "post:sns": "tsx scripts/post-to-sns.ts",
+    "copy:sns": "tsx scripts/copy-sns-text.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

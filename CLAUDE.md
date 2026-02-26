@@ -37,7 +37,7 @@ pnpm run post:sns --title="..." --url="..."                 # X+Threads同時投
 - `articles/published/` - 投稿済みログ
 - `info/pending/` - Info記事待ち
 - `templates/` - JSONスキーマ・テンプレート
-- `config/` - 設定ファイル（SEOルール等）
+- `config/` - 設定ファイル（SEOルール、SNS投稿ガイドライン等）
 - `.claude/skills/` - スキル定義（/post-note等）
 
 ## 注意事項
