@@ -23,9 +23,11 @@ YouTube動画のURLから字幕を取得し、ブログ記事に再構成してC
 ```
 Phase 1: 記事生成（自動）
     ↓
-Phase 2: 確認（唯一の確認ポイント）
+Phase 2: 下書き投稿（自動）
     ↓
-Phase 3: 公開 & SNS投稿文提示（自動）
+Phase 3: 確認（Contentfulで確認）
+    ↓
+Phase 4: 公開 & SNS投稿文提示（自動）
     ↓
 手動で画像/動画を追加してSNS投稿
 ```
@@ -120,37 +122,45 @@ https://www.brighty.site/blog/{slug}
 
 ---
 
-## Phase 2: 確認（唯一の確認ポイント）
+## Phase 2: 下書き投稿（自動）
 
-### 7. ユーザーに確認
-以下を表示して承認を求める:
-
-```
-📝 記事プレビュー
-─────────────────────────────
-タイトル: {title}
-カテゴリ: {category}
-slug: {slug}
-excerpt: {excerpt}
-
-🐦 X投稿文
-─────────────────────────────
-{X投稿文}
-
-─────────────────────────────
-公開してXに投稿しますか？
-```
-
----
-
-## Phase 3: 公開 & SNS投稿文提示（自動）
-
-### 8. バリデーション
+### 7. バリデーション
 ```bash
 pnpm run validate --file="{slug}.json"
 ```
 
-### 9. Contentfulに公開
+### 8. Contentfulに下書き投稿
+```bash
+pnpm run publish --file="{slug}.json"
+```
+
+---
+
+## Phase 3: 確認（Contentfulで確認）
+
+### 9. ユーザーに確認
+以下を表示して承認を求める:
+
+```
+📝 下書き確認
+─────────────────────────────
+Contentful: {contentful_url}
+
+タイトル: {title}
+カテゴリ: {category}
+slug: {slug}
+
+─────────────────────────────
+Contentfulで内容を確認して、問題なければ公開に進めます。
+修正があれば教えてください。
+```
+
+---
+
+## Phase 4: 公開 & SNS投稿文提示（自動）
+
+### 10. Contentfulで公開
+Contentful管理画面で「Publish」ボタンをクリック、または:
 ```bash
 pnpm run publish:live --file="{slug}.json"
 ```
