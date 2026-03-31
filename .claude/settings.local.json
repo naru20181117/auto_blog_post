@@ -3,7 +3,9 @@
     "allow": [
       "Bash($CLAUDE_PROJECT_DIR/.claude/hooks/notify.sh)",
       "Bash(/Users/narupro/openmi/brighty-servies/auto_blog_post/.claude/hooks/notify.sh)",
-      "Bash(claude mcp:*)"
+      "Bash(claude mcp:*)",
+      "Bash(pnpm run publish:live:*)",
+      "Bash(open:*)"
     ]
   },
   "hooks": {
