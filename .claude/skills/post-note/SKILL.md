@@ -50,6 +50,9 @@ noteのURLから記事を取得し、SEO最適化を行い、Contentfulに投稿
    **tags** (3〜6個):
    - 検索されやすいキーワードを選定
 
+   **body構成ルール**:
+   - **見出し（h2/h3）の直後には空のp要素を入れて改行する**（読みやすさのため）
+
 4. **ファイルをリネーム**
    ```bash
    mv articles/pending/pending-*.json articles/pending/[slug].json
